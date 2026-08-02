@@ -1,8 +1,23 @@
 aid: tvty
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/tvty.png
 name: TVTY
-description: 'TVTY is a company surfaced as a portfolio company of partech and added to the API Evangelist
-  network as a stub for enrichment. Sector: Applicative SaaS. This profile is a lead awaiting the enrichment
-  pipeline.'
+description: 'TVTY is an advertising technology company that bridges television and
+  digital advertising through its Moment Marketing platform. Its TV Ad Alert technology
+  detects when a brand or competitor TV spot airs and synchronizes digital media campaigns
+  — search, social, display and marketplace advertising — to those moments so advertisers
+  reach audiences at the point of highest attention. TVTY was a Partech portfolio
+  company serving global brands and media agencies.'
 url: https://raw.githubusercontent.com/api-evangelist/tvty/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,10 +27,14 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
-- Applicative Saas
+- Advertising
+- AdTech
+- Marketing
+- Television
+- Moment Marketing
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -23,5 +42,12 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/tvty-domain-security.yml
 - type: Website
   url: http://tvty.tv/
+x-enrichment:
+  date: '2026-07-21'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1
