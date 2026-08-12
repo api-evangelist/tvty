@@ -1,0 +1,91 @@
+generated: '2026-08-12'
+method: probed
+source: live HTTPS probes of the only host in apis.yml (tvty.tv)
+host: https://tvty.tv
+result: unreachable
+note: >-
+  Every /.well-known/ path was probed and NONE returned a document. The host does not
+  answer at all — tvty.tv still resolves (208.113.235.210, Route 53 nameservers, Google
+  MX records still present) but every TCP/HTTPS request to it times out, so each probe
+  below is recorded as a connection timeout (curl exit 28, no HTTP status). TVTY was
+  acquired by Nielsen in July 2021; the Internet Archive's last successful capture of
+  the site is 2023-06-08 ("TVTY - Actionable TV Intelligence"), and by 2023-11-02 the
+  host was 301-redirecting to an unrelated domain (safehavensforpets.org), i.e. the
+  hosting had already been repurposed. No WellKnown or SecurityTxt pointer is emitted in
+  apis.yml — this file records an absence, not a served surface.
+documents:
+- path: /.well-known/security.txt
+  status: null
+  error: connection-timeout
+- path: /.well-known/openid-configuration
+  status: null
+  error: connection-timeout
+- path: /.well-known/oauth-authorization-server
+  status: null
+  error: connection-timeout
+- path: /.well-known/api-catalog
+  status: null
+  error: connection-timeout
+- path: /.well-known/ai-plugin.json
+  status: null
+  error: connection-timeout
+- path: /.well-known/agent-card.json
+  status: null
+  error: connection-timeout
+- path: /.well-known/agent.json
+  status: null
+  error: connection-timeout
+x-also-probed:
+- url: https://tvty.tv/
+  status: null
+  error: connection-timeout
+- url: http://tvty.tv/
+  status: null
+  error: connection-timeout
+- url: https://tvty.tv/llms.txt
+  status: null
+  error: connection-timeout
+- url: https://tvty.tv/openapi.json
+  status: null
+  error: connection-timeout
+- url: https://tvty.tv/swagger.json
+  status: null
+  error: connection-timeout
+- url: https://tvty.tv/api
+  status: null
+  error: connection-timeout
+- url: https://tvty.tv/developers
+  status: null
+  error: connection-timeout
+x-tcp:
+  note: >-
+    TCP connect to 208.113.235.210 fails on both 443 and 80, so nothing is listening —
+    this is not a TLS or application-layer error.
+  port_443: unreachable
+  port_80: unreachable
+x-domain-registration:
+  registrar: MarkMonitor, Inc.
+  status: ACTIVE
+  created: '2014-02-11'
+  updated: '2026-01-15'
+  expires: '2027-02-11'
+  note: >-
+    The domain is still actively renewed through a corporate brand-protection registrar
+    while serving nothing — held, not operated.
+x-dns:
+  resolved: true
+  a:
+  - 208.113.235.210
+  nameservers:
+  - ns-24.awsdns-03.com
+  - ns-923.awsdns-51.net
+  - ns-1534.awsdns-63.org
+  - ns-1928.awsdns-49.co.uk
+  mx_present: true
+  subdomains_probed:
+  - {host: www.tvty.tv, resolves: false}
+  - {host: api.tvty.tv, resolves: false}
+  - {host: docs.tvty.tv, resolves: false}
+  - {host: developer.tvty.tv, resolves: false}
+  - {host: developers.tvty.tv, resolves: false}
+  - {host: app.tvty.tv, resolves: false}
